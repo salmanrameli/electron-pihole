@@ -1,7 +1,7 @@
 import React from 'react';
 
-const electron = window.require('electron')
-const Store = electron.remote.require('electron-store');
+// const electron = require('electron')
+const Store = window.Store;
 const store = new Store();
 
 class Root extends React.Component {
@@ -58,6 +58,10 @@ class Root extends React.Component {
 
                 store.set('url', final_url)
             }
+        } else {
+            final_url = http.concat(url)
+
+            store.set('url', final_url)
         }
     }
 
