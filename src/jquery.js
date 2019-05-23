@@ -1,0 +1,2 @@
+let $ = require('jquery');
+mainWindow.$ = $;

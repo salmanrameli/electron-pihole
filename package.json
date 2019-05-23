@@ -2,16 +2,23 @@
   "name": "electron-webview",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
+  "main": "main.js",
   "dependencies": {
+    "electron-store": "^3.2.0",
+    "jquery": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-electron-web-view": "^2.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dev": "nf start -p 3000"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^5.0.1",
+    "foreman": "^3.0.1"
   }
 }
