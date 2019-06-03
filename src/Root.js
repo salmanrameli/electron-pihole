@@ -74,7 +74,7 @@ class Root extends React.Component {
     render() {
         return(
             <div className="col-md-12">
-                <div className="pb-2 mt-4 mb-2 border-bottom">
+                <div className="pb-2 mt-4 mb-2">
                     <h1>Setting</h1>
                 </div>
                 <div className="card">

@@ -24,8 +24,10 @@ function loadPage() {
 }
 
 function restart() {
-  app.relaunch()
-  app.exit(0)
+  // app.relaunch()
+  // app.exit(0)
+
+  loadPage()
 }
 
 function createWindow () {
@@ -87,7 +89,7 @@ let menubar = [
     submenu: [
       { role: 'about' },
       { type: 'separator' },
-      { label: 'Restart Application', click() { restart() } },
+      { label: 'View Dashboard', click() { restart() } },
       { type: 'separator' },
       { label: 'Preferences', click() { mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, '../build/index.html')}`) } },
       { type: 'separator' },
@@ -103,7 +105,8 @@ let menubar = [
   {
     label: 'File',
     submenu: [
-      process.platform === 'darwin' ? { role: 'close' } : { role: 'quit' }
+      process.platform === 'darwin' ? 
+      { role: 'close' } : { role: 'quit' }
     ]
   },
   {
@@ -148,7 +151,6 @@ let menubar = [
       { role: 'togglefullscreen' }
     ]
   },
-  // { role: 'windowMenu' }
   {
     label: 'Window',
     submenu: [
