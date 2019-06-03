@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
+const isDev = require("electron-is-dev");
 
 const Store = require('electron-store');
 const store = new Store();
@@ -9,12 +10,14 @@ const store = new Store();
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-
 function loadPage() {
+  // store.delete('url')
   url = store.get('url')
 
   if(url === undefined) {
-    mainWindow.loadURL('http://localhost:3000')
+    mainWindow.loadURL(
+      isDev ? "http://localhost:3000" : `file://${path.join(__dirname, '../build/index.html')}`
+    )
   } else {
     mainWindow.loadURL(url)
   }
@@ -33,9 +36,11 @@ function createWindow () {
 		titleBarStyle: 'hidden',
     webPreferences: {
       nodeIntegration: false,
-      preload: path.join(__dirname, 'renderer.js')
+      preload: path.resolve(`${__dirname}/renderer.js`),
     }
   })
+
+  mainWindow.setResizable(false)
 
   loadPage()
 
@@ -84,7 +89,7 @@ let menubar = [
       { type: 'separator' },
       { label: 'Restart Application', click() { restart() } },
       { type: 'separator' },
-      { label: 'Preferences', click() { mainWindow.loadURL('http://localhost:3000/') } },
+      { label: 'Preferences', click() { mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, '../build/index.html')}`) } },
       { type: 'separator' },
       { role: 'services' },
       { type: 'separator' },

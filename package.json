@@ -1,10 +1,45 @@
 {
   "name": "electron-webview",
+  "description": "Electron wrapper for Pi-Hole dasboard",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
-  "main": "main.js",
+  "main": "public/main.js",
+  "author": {
+    "name": "Salman Rameli",
+    "email": "salmanrameli@gmail.com"
+  },
+  "build": {
+    "appId": "com.salmanrameli.electron-pihole",
+    "productName": "Electron Pi-Hole",
+    "copyright": "Copyright © 2019 ${author}",
+    "asar": false,
+    "extends": null,
+    "files": [
+      "assets/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "public/*",
+      "src/*",
+      "electron-wait-react.js",
+      "Procfile"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "mac": {
+			"icon": "assets/icon.icns",
+			"type": "distribution",
+			"target": [
+				"dmg"
+			],
+			"category": "public.app-category.utilities"
+		}
+  },
   "dependencies": {
+    "cross-env": "^5.2.0",
+    "electron-is-dev": "^1.1.0",
     "electron-store": "^3.2.0",
     "jquery": "^3.4.1",
     "react": "^16.8.6",
@@ -13,12 +48,14 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron": "electron .",
-    "dev": "nf start -p 3000"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,7 +73,11 @@
     ]
   },
   "devDependencies": {
-    "electron": "^5.0.1",
-    "foreman": "^3.0.1"
+    "concurrently": "^4.1.0",
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
+    "foreman": "^3.0.1",
+    "typescript": "^3.5.1",
+    "wait-on": "^3.2.0"
   }
 }
