@@ -35,7 +35,11 @@
 				"dmg"
 			],
 			"category": "public.app-category.utilities"
-		}
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
   },
   "dependencies": {
     "cross-env": "^5.2.0",

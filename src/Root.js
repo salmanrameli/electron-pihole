@@ -1,6 +1,5 @@
 import React from 'react';
 
-// const electron = require('electron')
 const Store = window.Store;
 const store = new Store();
 

@@ -23,19 +23,11 @@ function loadPage() {
   }
 }
 
-function restart() {
-  // app.relaunch()
-  // app.exit(0)
-
-  loadPage()
-}
-
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1200, 
 		height: 800,
-		titleBarStyle: 'hidden',
     webPreferences: {
       nodeIntegration: false,
       preload: path.resolve(`${__dirname}/renderer.js`),
@@ -87,9 +79,7 @@ let menubar = [
   ...(process.platform === 'darwin' ? [{
     label: app.name,
     submenu: [
-      { role: 'about' },
-      { type: 'separator' },
-      { label: 'View Dashboard', click() { restart() } },
+      { role: 'about' },      
       { type: 'separator' },
       { label: 'Preferences', click() { mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, '../build/index.html')}`) } },
       { type: 'separator' },
@@ -105,6 +95,8 @@ let menubar = [
   {
     label: 'File',
     submenu: [
+      { label: 'View Dashboard', click() { loadPage() } },
+      { type: 'separator' },
       process.platform === 'darwin' ? 
       { role: 'close' } : { role: 'quit' }
     ]
