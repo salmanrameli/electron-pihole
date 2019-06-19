@@ -1,5 +1,5 @@
 {
-  "name": "electron-webview",
+  "name": "Pi-Hole",
   "description": "Electron wrapper for Pi-Hole dasboard",
   "version": "0.1.0",
   "private": true,
