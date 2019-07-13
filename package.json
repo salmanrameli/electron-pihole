@@ -1,7 +1,7 @@
 {
   "name": "Pi-Hole",
   "description": "Electron wrapper for Pi-Hole dasboard",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "homepage": "./",
   "main": "public/main.js",
@@ -29,12 +29,12 @@
       "output": "dist"
     },
     "mac": {
-			"icon": "assets/icon.icns",
-			"type": "distribution",
-			"target": [
-				"dmg"
-			],
-			"category": "public.app-category.utilities"
+      "icon": "assets/icon.icns",
+      "type": "distribution",
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.utilities"
     },
     "win": {
       "target": "nsis",
