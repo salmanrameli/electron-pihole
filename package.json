@@ -1,7 +1,7 @@
 {
   "name": "Pi-Hole",
   "description": "Electron wrapper for Pi-Hole dasboard",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "homepage": "./",
   "main": "public/main.js",
@@ -12,7 +12,7 @@
   "build": {
     "appId": "com.salmanrameli.electron-pihole",
     "productName": "Electron Pi-Hole",
-    "copyright": "Copyright © 2019 ${author}",
+    "copyright": "Copyright © 2020 ${author}",
     "asar": false,
     "extends": null,
     "files": [
@@ -42,14 +42,14 @@
     }
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
+    "cross-env": "^6.0.3",
     "electron-is-dev": "^1.1.0",
-    "electron-store": "^3.2.0",
+    "electron-store": "^5.1.0",
     "jquery": "^3.4.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-electron-web-view": "^2.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.3.0"
   },
   "scripts": {
     "react-start": "react-scripts start",
@@ -77,11 +77,11 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "electron": "^5.0.2",
-    "electron-builder": "^20.41.0",
+    "concurrently": "^5.0.2",
+    "electron": "^7.1.8",
+    "electron-builder": "^21.2.0",
     "foreman": "^3.0.1",
-    "typescript": "^3.5.1",
-    "wait-on": "^3.2.0"
+    "typescript": "^3.7.4",
+    "wait-on": "^3.3.0"
   }
 }
