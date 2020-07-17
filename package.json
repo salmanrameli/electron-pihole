@@ -39,6 +39,14 @@
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "icon": "assets/icon.icns",
+      "executableName": "Pi-Hole",
+      "target": [
+        "deb", "AppImage"
+      ],
+      "synopsis": "Electron wrapper for Pi-Hole dashboard"
     }
   },
   "dependencies": {
