@@ -36,6 +36,14 @@
       ],
       "category": "public.app-category.utilities"
     },
+    "linux": {
+      "icon": "assets/icon.icns",
+      "executableName": "Pi-Hole",
+      "target": [
+        "deb", "AppImage"
+      ],
+      "synopsis": "Electron wrapper for Pi-Hole dashboard"
+    }
   },
   "dependencies": {
     "cross-env": "^7.0.2",
