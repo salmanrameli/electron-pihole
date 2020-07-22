@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/salmanrameli/electron-pihole/master/assets/icon_1024x1024x32.png" height="256">
+  <h1 align="center">Electron Pi-Hole</h1>
+</p>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![App](https://raw.githubusercontent.com/salmanrameli/electron-pihole/master/app.png)
